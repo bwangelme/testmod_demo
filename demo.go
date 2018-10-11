@@ -2,10 +2,13 @@ package main
 
 import (
 	"fmt"
-
-	"github.com/bwangelme/testmod"
+	"github.com/bwangelme/testmod/v2"
 )
 
 func main() {
-	fmt.Println(testmod.Hi("xff"))
+	greet, err := testmod.Hi("xff", "cn")
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println(greet)
 }
